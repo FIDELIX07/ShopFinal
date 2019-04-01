@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-if(count($_SESSION['items']) <= 0){
+if(count(@$_SESSION['items']) <= 0){
     $_SESSION['items'] = array();
 }
 
 include('config.php');
 
-if(isset($_SESSION['user'])) $account = true;
+if(isset(@$_SESSION['user'])) $account = true;
 
 
 $site_description = mysqli_query($db,"select * from imhontu_home ");
